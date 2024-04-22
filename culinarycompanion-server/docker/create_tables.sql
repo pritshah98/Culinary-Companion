@@ -1,0 +1,45 @@
+-- noinspection SqlNoDataSourceInspectionForFile
+
+-- CREATE TABLE Users (
+--     UserID SERIAL PRIMARY KEY,
+--     Username VARCHAR(50) UNIQUE NOT NULL,
+--     Password VARCHAR(100) NOT NULL, -- Hashed password for security
+--     Email VARCHAR(100) UNIQUE NOT NULL,
+--     JoinDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
+--
+-- CREATE TABLE Ingredients (
+--     IngredientID SERIAL PRIMARY KEY,
+--     Name VARCHAR(100) NOT NULL,
+--     UNIQUE(Name)
+-- );
+
+-- CREATE TABLE Recipes (
+--     RecipeID SERIAL PRIMARY KEY,
+--     Title VARCHAR(255) NOT NULL,
+--     Description TEXT,
+--     Instructions TEXT,
+--     UserID INT,
+--     CreatedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--     LastModifiedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
+
+-- CREATE TABLE RecipeIngredients (
+--     RecipeID INT,
+--     IngredientID INT,
+--     Quantity DECIMAL(10,2), -- Quantity of ingredient needed (e.g., 1 cup)
+--     Unit VARCHAR(50), -- Unit of measurement (e.g., cup, tbsp)
+--     PRIMARY KEY (RecipeID, IngredientID),
+--     FOREIGN KEY (RecipeID) REFERENCES Recipes(RecipeID),
+--     FOREIGN KEY (IngredientID) REFERENCES Ingredients(IngredientID)
+-- );
+
+-- CREATE TABLE Ratings (
+--     RatingID SERIAL PRIMARY KEY,
+--     RecipeID INT,
+--     UserID INT,
+--     Rating DECIMAL(3,2), -- Rating out of 5
+--     Comment TEXT,
+--     FOREIGN KEY (RecipeID) REFERENCES Recipes(RecipeID),
+--     FOREIGN KEY (UserID) REFERENCES Users(UserID)
+-- );
